@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  nx-apps:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./
+        target: /app/angular
+      - type: bind
+        source: ./
+        target: /app/react
+    ports:
+      - 80:80
